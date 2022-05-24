@@ -1,6 +1,6 @@
 # open_erp
 
-Use some old project to create a ERP with new tecnologies and open to use.
+Use a personal project to create a ERP with new tecnologies and open to use.
 
 # Next Steps:
 
