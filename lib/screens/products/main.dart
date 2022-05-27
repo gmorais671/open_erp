@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:open_erp/components/buttons/neuromorph_button.dart';
-import 'package:open_erp/components/drawer/navigation_drawer.dart';
-import 'package:open_erp/components/static/neuromorph_flutter_logo.dart';
+import 'package:open_erp/components/static/neuromorph_informer.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+import '../../components/buttons/neuromorph_button.dart';
+
+class ProductsMain extends StatefulWidget {
+  const ProductsMain({Key? key}) : super(key: key);
+
+  @override
+  _ProductsMainState createState() => _ProductsMainState();
+}
+
+class _ProductsMainState extends State<ProductsMain> {
+  final String title = 'Products';
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +21,9 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Welcome, user!',
-          style: TextStyle(color: Colors.black),
+        title: Text(
+          title,
+          style: const TextStyle(color: Colors.black),
         ),
         centerTitle: true,
         backgroundColor: Colors.grey[300],
@@ -25,8 +32,8 @@ class HomePage extends StatelessWidget {
           color: Colors.black,
         ),
       ),
-      drawer: NavigationDrawer(),
       body: Container(
+        width: width,
         color: Colors.grey[300],
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -34,66 +41,70 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Flexible(
-              flex: 2,
+              flex: 1,
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: width*0.4,
-                    child: Center(
-                      child: NeuromorphButton(
-                        width * 0.25,
-                        width * 0.25,
-                        Colors.blue,
-                        Icons.add,
-                        'New Sale',
-                        () {},
-                      ),
-                    ),
+                  NeuromorphInformer(
+                    height: height * 0.08,
+                    width: width * 0.35,
+                    title: 'Sold Products',
+                    value: '52',
                   ),
-                  SizedBox(
-                    width: width*0.4,
-                    child: Center(
-                      child: NeuromorphButton(
-                        width * 0.25,
-                        width * 0.25,
-                        Colors.blue,
-                        Icons.add,
-                        'New buy',
-                        () => {},
-                      ),
-                    ),
+                  NeuromorphInformer(
+                    height: height * 0.08,
+                    width: width * 0.35,
+                    title: 'Total Products',
+                    value: '163',
                   ),
                 ],
               ),
             ),
             Flexible(
-              flex: 2,
+              flex: 1,
+              child: NeuromorphInformer(
+                height: height * 0.08,
+                width: width * 0.7,
+                title: 'Best Selling Product',
+                value: 'ABC - VMB.co',
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: NeuromorphInformer(
+                height: height * 0.08,
+                width: width * 0.7,
+                title: 'Most Profitable Product',
+                value: 'ABC - VMB.co',
+              ),
+            ),
+            Flexible(
+              flex: 1,
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width*0.4,
+                    width: width * 0.4,
                     child: Center(
                       child: NeuromorphButton(
-                        width * 0.25,
+                        width * 0.4,
                         width * 0.25,
                         Colors.blue,
-                        Icons.add,
-                        'Add Client',
+                        Icons.list,
+                        'Products List',
                         () => {},
                       ),
                     ),
                   ),
                   SizedBox(
-                    width: width*0.4,
+                    width: width * 0.4,
                     child: Center(
                       child: NeuromorphButton(
-                        width * 0.25,
+                        width * 0.4,
                         width * 0.25,
                         Colors.blue,
                         Icons.add,
@@ -105,12 +116,6 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Flexible(
-                flex: 6,
-                child: NeuromorphFlutterLogo(
-                  width * 0.3,
-                  width * 0.3,
-                ))
           ],
         ),
       ),

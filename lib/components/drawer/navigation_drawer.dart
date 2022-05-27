@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:open_erp/screens/home.dart';
+import 'package:open_erp/screens/products/main.dart';
 
 class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
+  NavigationDrawer({Key? key}) : super(key: key);
+
+  static String _url =
+      'https://conteudo.imguol.com.br/blogs/174/files/2018/05/iStock-648229868-1024x909.jpg';
 
   @override
   Widget build(BuildContext context) => Drawer(
@@ -18,8 +22,35 @@ class NavigationDrawer extends StatelessWidget {
       );
 
   Widget buildHeader(BuildContext context) => Container(
+        color: Colors.blue.shade700,
         padding: EdgeInsets.only(
-          top: MediaQuery.of(context).padding.top,
+          top: MediaQuery.of(context).padding.top + 16.0,
+          left: 8.0,
+          right: 8.0,
+          bottom: 16.0,
+        ),
+        child: Column(
+          children: const [
+            CircleAvatar(
+              radius: 52,
+              backgroundImage: AssetImage('images/radio_head.jpg'),
+            ),
+            SizedBox(height: 12),
+            Text(
+              'Radio Head',
+              style: TextStyle(
+                fontSize: 28,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'radio_head@domain.com',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
       );
 
@@ -42,7 +73,13 @@ class NavigationDrawer extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.shopping_bag_outlined),
               title: const Text('Products'),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ProductsMain(),
+                  ),
+                );
+              },
             ),
             ListTile(
               leading: const Icon(Icons.person_outlined),

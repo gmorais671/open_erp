@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class NeuromorphFlutterLogo extends StatelessWidget {
-  NeuromorphFlutterLogo(this.height, this.width, {Key? key}) : super(key: key);
+  const NeuromorphFlutterLogo(this.height, this.width, {Key? key}) : super(key: key);
 
-  double height;
-  double width;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {

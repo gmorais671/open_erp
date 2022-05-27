@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 
 class NeuromorphButton extends StatefulWidget {
   NeuromorphButton(
-      this.width, this.height, this.color, this.text, this.function,
+      this.width, this.height, this.color, this.icon, this.text, this.function,
       {Key? key})
       : super(key: key);
 
   double width;
   double height;
   Color color;
+  IconData icon;
   String text;
   Function function;
 
@@ -76,7 +77,7 @@ class _NeuromorphButtonState extends State<NeuromorphButton> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
-              Icons.add,
+              widget.icon,
               color: isElevated ? Colors.white : Colors.black,
             ),
             Text(
