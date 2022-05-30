@@ -5,6 +5,7 @@ Free use!
 
 # Next Steps:
 
--Create main pages;<br/>
--Create new design;<br/>
--Create app routs;
+- Products section:
+  - Add New Product;<br/>
+  - Products List;<br/>
+  - Edit Product;
