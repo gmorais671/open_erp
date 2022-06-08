@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:open_erp/components/buttons/neuromorph_button.dart';
 import 'package:open_erp/components/drawer/navigation_drawer.dart';
 import 'package:open_erp/components/static/neuromorph_flutter_logo.dart';
+import 'package:open_erp/screens/products/add.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width*0.4,
+                    width: width * 0.4,
                     child: Center(
                       child: NeuromorphButton(
                         width * 0.25,
@@ -54,7 +55,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: width*0.4,
+                    width: width * 0.4,
                     child: Center(
                       child: NeuromorphButton(
                         width * 0.25,
@@ -77,7 +78,7 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width*0.4,
+                    width: width * 0.4,
                     child: Center(
                       child: NeuromorphButton(
                         width * 0.25,
@@ -90,7 +91,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: width*0.4,
+                    width: width * 0.4,
                     child: Center(
                       child: NeuromorphButton(
                         width * 0.25,
@@ -98,7 +99,13 @@ class HomePage extends StatelessWidget {
                         Colors.blue,
                         Icons.add,
                         'Add Product',
-                        () => {},
+                        () => {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const ProdusctsAdd(),
+                            ),
+                          )
+                        },
                       ),
                     ),
                   ),

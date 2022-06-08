@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:open_erp/components/static/neuromorph_informer.dart';
+import 'package:open_erp/screens/products/add.dart';
 
 import '../../components/buttons/neuromorph_button.dart';
 
@@ -48,14 +49,14 @@ class _ProductsMainState extends State<ProductsMain> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   NeuromorphInformer(
-                    height: height * 0.08,
-                    width: width * 0.35,
+                    height: height * 0.13,
+                    width: width * 0.4,
                     title: 'Sold Products',
                     value: '52',
                   ),
                   NeuromorphInformer(
-                    height: height * 0.08,
-                    width: width * 0.35,
+                    height: height * 0.13,
+                    width: width * 0.4,
                     title: 'Total Products',
                     value: '163',
                   ),
@@ -65,8 +66,8 @@ class _ProductsMainState extends State<ProductsMain> {
             Flexible(
               flex: 1,
               child: NeuromorphInformer(
-                height: height * 0.08,
-                width: width * 0.7,
+                height: height * 0.13,
+                width: width * 0.75,
                 title: 'Best Selling Product',
                 value: 'ABC - VMB.co',
               ),
@@ -74,8 +75,8 @@ class _ProductsMainState extends State<ProductsMain> {
             Flexible(
               flex: 1,
               child: NeuromorphInformer(
-                height: height * 0.08,
-                width: width * 0.7,
+                height: height * 0.13,
+                width: width * 0.75,
                 title: 'Most Profitable Product',
                 value: 'ABC - VMB.co',
               ),
@@ -109,7 +110,13 @@ class _ProductsMainState extends State<ProductsMain> {
                         Colors.blue,
                         Icons.add,
                         'Add Product',
-                        () => {},
+                        () => {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const ProdusctsAdd(),
+                            ),
+                          )
+                        },
                       ),
                     ),
                   ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NeuromorphFlutterLogo extends StatelessWidget {
-  const NeuromorphFlutterLogo(this.height, this.width, {Key? key}) : super(key: key);
+  const NeuromorphFlutterLogo(this.height, this.width, {Key? key})
+      : super(key: key);
 
   final double height;
   final double width;
@@ -32,9 +33,10 @@ class NeuromorphFlutterLogo extends StatelessWidget {
             ),
           ]),
       child: Center(
-          child: FlutterLogo(
-            size: 80,
-          )),
+        child: FlutterLogo(
+          size: 80,
+        ),
+      ),
     );
   }
 }

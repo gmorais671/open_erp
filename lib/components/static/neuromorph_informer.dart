@@ -16,6 +16,14 @@ class NeuromorphInformer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool borderSize = false;
+
+    if (width >= height) {
+      borderSize = true;
+    } else {
+      borderSize = false;
+    }
+
     return Container(
       width: width,
       height: height,
@@ -24,7 +32,11 @@ class NeuromorphInformer extends StatelessWidget {
           border: Border.all(
             color: Colors.transparent,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(width * 0.5)),
+          borderRadius: BorderRadius.all(
+            Radius.circular(
+              borderSize ? height * 0.3 : width * 0.3,
+            ),
+          ),
           boxShadow: const [
             BoxShadow(
               color: Colors.grey,
@@ -34,7 +46,7 @@ class NeuromorphInformer extends StatelessWidget {
             ),
             BoxShadow(
               color: Colors.white,
-              offset: const Offset(-4, -4),
+              offset: Offset(-4, -4),
               blurRadius: 15,
               spreadRadius: 1,
             ),
